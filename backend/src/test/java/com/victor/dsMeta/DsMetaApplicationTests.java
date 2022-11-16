@@ -1,4 +1,4 @@
-package com.victor.backend;
+package com.victor.dsMeta;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
