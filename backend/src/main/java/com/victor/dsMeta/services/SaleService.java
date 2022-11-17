@@ -20,6 +20,7 @@ public class SaleService {
 	@Autowired
 	private SaleRepository repository;
 	
+	
 	public Page<Sale> findSale(Pageable pageable, String minDate, String maxDate) {
 		
 		LocalDate today =  LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault()) ;
@@ -31,4 +32,5 @@ public class SaleService {
 		
 		return repository.findSales(min,max,pageable);
 	}
+	
 }
