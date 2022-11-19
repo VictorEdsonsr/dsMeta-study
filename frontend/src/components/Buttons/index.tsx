@@ -2,9 +2,9 @@ import notificationIcon from "../../assets/img/notificar.svg";
 
 function Notificar() {
   return (
-    <a href="">
+    <button className="mx-auto p-3 rounded-lg bg-transparent border-2 border-red-500 hover:bg-red-300">
       <img src={notificationIcon} alt="Botao de notificar por SMS" />
-    </a>
+    </button>
   );
 }
 
