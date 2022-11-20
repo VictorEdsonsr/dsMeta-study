@@ -1,41 +1,13 @@
+import axios from "axios";
+import { useEffect } from "react";
 import { Notificar } from "../Buttons";
 
 function Table() {
-  const table = [
-    {
-      id: 345,
-      data: "30/04/05",
-      visita: 3,
-      venda: 43,
-      nome: "anakin",
-      total: 55400,
-    },
-    {
-      id: 345,
-      data: "30/04/05",
-      visita: 3,
-      venda: 43,
-      nome: "anakin",
-      total: 55400,
-    },
-    {
-      id: 345,
-      data: "30/04/05",
-      visita: 3,
-      venda: 43,
-      nome: "anakin",
-      total: 55400,
-    },
-
-    {
-      id: 345,
-      data: "30/04/05",
-      visita: 3,
-      venda: 43,
-      nome: "anakin",
-      total: 55400,
-    },
-  ];
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/sales")
+      .then((response) => console.log(response));
+  }, []);
 
   return (
     <table className="w-full">
