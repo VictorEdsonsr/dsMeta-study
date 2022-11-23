@@ -1,17 +1,19 @@
 import "./index.scss";
 import Header from "./components/Header";
-import Table from "./components/Table";
-import VendasForm from "./components/VendasForm";
+import TableSale from "./components/TableSale";
+import {ToastContainer} from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+
 
 function App() {
   return (
     <>
+      <ToastContainer/>
       <Header />
       <main className="flex flex-col items-center justify-center px-5">
         <section className="bg-slate-600 my-10 mx-2 p-2 w-full rounded-md">
           <div className="container mx-auto">
-            <VendasForm />
-            <Table />
+            <TableSale />
           </div>
         </section>
       </main>

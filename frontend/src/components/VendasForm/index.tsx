@@ -1,21 +1,26 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import DatesInputs from "../DatesInputs";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-function VendasForm() {
-  const max: Date = new Date();
-  const min: Date = new Date(new Date().setDate(new Date().getDate() - 365));
+function VendasForm({minDate, maxDate, setMinDate, setMaxDate} : any) {
 
-  const [minDate, setMinDate] = useState(min);
-  const [maxDate, setMaxDate] = useState(max);
 
   return (
     <form className="flex flex-col my-5 p-3 bg-transparent">
       <h1 className="text-xl font-bold text-indigo-300">Vendas</h1>
 
       <div className="flex flex-col items-center justify-center">
-        <DatesInputs dateRange={minDate} setDate={setMinDate} />
-        <DatesInputs dateRange={maxDate} setDate={setMaxDate} />
+      <DatePicker
+      selected={minDate}
+      onChange={(date: Date) => setMinDate(date)}
+      className=" bg-slate-800 text-white rounded-lg outline-none p-2 text-md my-2 "
+      dateFormat="dd/MM/yyyy"
+    />
+      <DatePicker
+        selected={maxDate}
+        onChange={(date: Date) => setMaxDate(date)}
+        className=" bg-slate-800 text-white rounded-lg outline-none p-2 text-md my-2 "
+        dateFormat="dd/MM/yyyy"
+      />
       </div>
     </form>
   );
